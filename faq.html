@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spark Mind | FAQ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@400,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <header id="header">
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="Spark Mind Logo" style="height: 40px; width: auto; border-radius: 8px; margin-right: 12px;">
+            <span>SPARK</span> MIND
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="persona.html">Persona</a>
+            <a href="brainstorm.html">Brainstorming</a>
+            <a href="prototype.html">Prototype</a>
+            <a href="team.html">Team</a>
+            <a href="faq.html" class="active">FAQ</a>
+        </nav>
+    </header>
+
+    <section>
+        <span class="section-tag">Information Desk</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        
+        <div class="grid-3" style="grid-template-columns: 1fr; gap: 1.5rem; max-width: 900px;">
+            <div class="glass-card faq-item">
+                <p class="faq-question">How does the "Privacy Scrubber" actually work?</p>
+                <p class="faq-answer">The scrubber uses a client-side RegEx (Regular Expression) engine that identifies patterns matching Student IDs, Full Names, and Email addresses. It redacts these *before* they are sent to any AI API, ensuring your identity never leaves your browser.</p>
+            </div>
+
+            <div class="glass-card faq-item">
+                <p class="faq-question">Does this prevent AI detection by teachers?</p>
+                <p class="faq-answer">Guardian AI isn't built to "hide" AI usage, but to encourage *ethical* usage. By using Vector Logic warnings, students are alerted when their work is too close to a copy-paste AI response, prompting them to rephrase and think critically.</p>
+            </div>
+
+            <div class="glass-card faq-item">
+                <p class="faq-question">Is my data stored on Guardian AI servers?</p>
+                <p class="faq-answer">No. Our framework follows a "Zero-Retention" policy. All processing happens in the local execution environment (the Sandbox), and no data is logged or stored long-term.</p>
+            </div>
+
+            <div class="glass-card faq-item">
+                <p class="faq-question">Can I use this for any AI model?</p>
+                <p class="faq-answer">Yes. The Guardian framework is designed as an "interception layer" that can sit in front of ChatGPT, Gemini, Claude, or any LLM, acting as a security buffer.</p>
+            </div>
+
+            <div class="glass-card faq-item">
+                <p class="faq-question">Why was the 6-3-5 method used?</p>
+                <p class="faq-answer">The 6-3-5 method allowed us to rapidly iterate through 108 ideas in a very short time, ensuring that we didn't just pick the easiest solution, but the most viable and ethical one.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="text-dim" style="font-size: 0.8rem; letter-spacing: 2px;">© 2026 SPARK MIND | DIGITAL INTEGRITY FRAMEWORK</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

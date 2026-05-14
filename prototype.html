@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardian AI | Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@400,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <header id="header">
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="Spark Mind Logo" style="height: 40px; width: auto; border-radius: 8px; margin-right: 12px;">
+            <span>SPARK</span> MIND
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="persona.html">Persona</a>
+            <a href="brainstorm.html">Brainstorming</a>
+            <a href="prototype.html" class="active">Prototype</a>
+            <a href="team.html">Team</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </header>
+
+    <section>
+        <span class="section-tag">Phase 03 / Prototype</span>
+        <h2 class="section-title">Guardian Sandbox</h2>
+        
+        <div class="glass-card" style="margin-bottom: 3rem;">
+            <p style="font-size: 1.1rem; color: #e2e8f0; line-height: 1.8;">
+                The **Spark Mind Prototype** is an interactive simulation of an "Ethical Interception Layer." 
+                In a real-world scenario, this layer sits between you and the AI model to sanitize your data, 
+                verify logical integrity, and optimize energy consumption. 
+                <br><br>
+                <strong>How to use:</strong> Select your ethical guardrails using the toggles on the left, 
+                then click <strong>'Run Interception'</strong> to see how Spark Mind transforms your raw input 
+                into a secure and responsible transmission.
+            </p>
+        </div>
+        
+        <div class="sandbox-ui">
+            <div class="sidebar">
+                <div class="terminal-header">
+                    <div class="dot dot-r" style="background: #ff5f56; width: 12px; height: 12px; border-radius: 50%;"></div>
+                    <div class="dot dot-y" style="background: #ffbd2e; width: 12px; height: 12px; border-radius: 50%; margin: 0 8px;"></div>
+                    <div class="dot dot-g" style="background: #27c93f; width: 12px; height: 12px; border-radius: 50%;"></div>
+                </div>
+                
+                <textarea id="promptArea">Can you help me draft a formal email to my professor resubmitting my Computer Networks assignment on Link State Routing? My student ID is se24ucse038 and my name is Siripella Rishi Sri Bhargav.</textarea>
+
+                <div class="toggle-btn active" id="scrubToggle">
+                    <span>Privacy Scrubber</span>
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="toggle-btn" id="matchToggle">
+                    <span>Logic Warnings</span>
+                    <i class="fas fa-circle-xmark"></i>
+                </div>
+                <div class="toggle-btn" id="ecoToggle">
+                    <span>Environmental Guard</span>
+                    <i class="fas fa-circle-xmark"></i>
+                </div>
+
+                <button class="btn-execute" id="runBtn">Run Interception</button>
+            </div>
+
+            <div class="main-content">
+                <div style="display: flex; gap: 15px; margin-bottom: 2rem;">
+                    <div id="pAlert" class="alert-pill warning"><i class="fas fa-user-secret"></i> PII Redacted</div>
+                    <div id="lAlert" class="alert-pill info"><i class="fas fa-microchip"></i> Vector Logic Checked</div>
+                    <div id="eAlert" class="alert-pill info" style="background: rgba(39, 201, 63, 0.1); color: #27c93f; border: 1px solid rgba(39, 201, 63, 0.2);"><i class="fas fa-leaf"></i> Eco-Optimized</div>
+                </div>
+
+                <div class="typing-text" id="output">Initialize Guardian Protocol...
+Click 'Run Interception' to begin analysis.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="text-dim" style="font-size: 0.8rem; letter-spacing: 2px;">© 2026 SPARK MIND | DIGITAL INTEGRITY FRAMEWORK</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        let scrubActive = true;
+        let matchActive = false;
+        let ecoActive = false;
+
+        const scrubToggle = document.getElementById('scrubToggle');
+        const matchToggle = document.getElementById('matchToggle');
+        const ecoToggle = document.getElementById('ecoToggle');
+
+        scrubToggle.addEventListener('click', () => {
+            scrubActive = !scrubActive;
+            scrubToggle.classList.toggle('active');
+            scrubToggle.querySelector('i').className = scrubActive ? 'fas fa-check-circle' : 'fas fa-circle-xmark';
+        });
+
+        matchToggle.addEventListener('click', () => {
+            matchActive = !matchActive;
+            matchToggle.classList.toggle('active');
+            matchToggle.querySelector('i').className = matchActive ? 'fas fa-check-circle' : 'fas fa-circle-xmark';
+        });
+
+        ecoToggle.addEventListener('click', () => {
+            ecoActive = !ecoActive;
+            ecoToggle.classList.toggle('active');
+            ecoToggle.querySelector('i').className = ecoActive ? 'fas fa-check-circle' : 'fas fa-circle-xmark';
+        });
+
+        const runBtn = document.getElementById('runBtn');
+        const output = document.getElementById('output');
+
+        function typeWriter(text, i) {
+            if (i < text.length) {
+                output.textContent = text.substring(0, i + 1);
+                setTimeout(() => typeWriter(text, i + 1), 20);
+            }
+        }
+
+        runBtn.addEventListener('click', () => {
+            runBtn.disabled = true;
+            runBtn.textContent = 'INTERCEPTING...';
+            output.textContent = 'Guarding transmission...';
+            
+            document.getElementById('pAlert').classList.remove('show');
+            document.getElementById('lAlert').classList.remove('show');
+            document.getElementById('eAlert').classList.remove('show');
+
+            setTimeout(() => {
+                runBtn.disabled = false;
+                runBtn.textContent = 'Run Interception';
+
+                if (scrubActive) document.getElementById('pAlert').classList.add('show');
+                if (matchActive) document.getElementById('lAlert').classList.add('show');
+                if (ecoActive) document.getElementById('eAlert').classList.add('show');
+
+                const name = scrubActive ? "[REDACTED_USER]" : "Siripella Rishi Sri Bhargav";
+                const id = scrubActive ? "[REDACTED_ID]" : "se24ucse038";
+                
+                const ecoNote = ecoActive ? "\n[ECO-SHIELD: Prompt compressed for 40% less server heat]" : "";
+
+                const responseText = `STATUS: SECURE_TRANSMISSION_COMPLETE${ecoNote}\n\nSubject: Resubmission Request - Computer Networks\n\nDear Professor,\n\nI am writing to formally resubmit my assignment on Link State Routing. After deeper review, I've refined the routing table calculation logic.\n\nBest,\n${name}\nID: ${id}\n\n[GUARDED BY SPARK MIND]`;
+                
+                typeWriter(responseText, 0);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

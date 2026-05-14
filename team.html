@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spark Mind | Our Team</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@400,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        .member-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s var(--ease);
+        }
+        .member-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(var(--primary-rgb), 0.1);
+        }
+        .member-avatar {
+            width: 80px; height: 80px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; font-weight: 800; color: #000;
+        }
+        .experience-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        @media (max-width: 768px) {
+            .experience-section { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <header id="header">
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="Spark Mind Logo" style="height: 40px; width: auto; border-radius: 8px; margin-right: 12px;">
+            <span>SPARK</span> MIND
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="persona.html">Persona</a>
+            <a href="brainstorm.html">Brainstorming</a>
+            <a href="prototype.html">Prototype</a>
+            <a href="team.html" class="active">Team</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </header>
+
+    <section>
+        <span class="section-tag">The Architects</span>
+        <h2 class="section-title">The Design Team</h2>
+        
+        <div class="team-grid">
+            <div class="member-card">
+                <div class="member-avatar">SR</div>
+                <h3>Siripella Rishi</h3>
+                <p class="text-dim">Product Design & Ethics Lead</p>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">VA</div>
+                <h3>V. Charan Adithya</h3>
+                <p class="text-dim">Technical Strategy & UX</p>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">GR</div>
+                <h3>M. Goutham Reddy</h3>
+                <p class="text-dim">Systems Analysis</p>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">VK</div>
+                <h3>Vedsai Kamarthi</h3>
+                <p class="text-dim">User Research Specialist</p>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">SH</div>
+                <h3>Syed Aaber Hashmi</h3>
+                <p class="text-dim">Security Architecture</p>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">SZ</div>
+                <h3>Syed Zeeshan</h3>
+                <p class="text-dim">Data Privacy Auditor</p>
+            </div>
+        </div>
+
+        <span class="section-tag">Our Journey</span>
+        <h2 class="section-title">The Course Experience</h2>
+        
+        <div class="experience-section">
+            <div class="glass-card">
+                <h4 style="color: var(--primary); margin-bottom: 1rem;">The Discovery Vacuum</h4>
+                <p class="text-dim">
+                    During the initial weeks of this course, we were hit with a startling realization: while everyone was teaching us *how* to use AI, no one was teaching us how to protect our intellectual identity. We spent many late nights at Mahindra University debating the "Zero-Knowledge" paradox, which eventually became the seed for Spark Mind.
+                </p>
+            </div>
+            <div class="glass-card">
+                <h4 style="color: var(--secondary); margin-bottom: 1rem;">The 6-3-5 Pressure Cooker</h4>
+                <p class="text-dim">
+                    Our 6-3-5 brainstorming session was a turning point. Initially, we were stuck on simple detection tools. However, the rapid pace of the 6-3-5 method forced us to think deeper, leading us to pivot from "Detection" to "Proactive Interception." It was the most intense 30 minutes of our design journey, yielding over 100 raw concepts.
+                </p>
+            </div>
+            <div class="glass-card">
+                <h4 style="color: var(--accent); margin-bottom: 1rem;">From Persona to Prototype</h4>
+                <p class="text-dim">
+                    Interviewing stakeholders revealed a deep-seated fear of "Algorithmic Permanent Storage." One student mentioned they felt like their "brain was being harvested" by LLMs. This emotional insight shifted our prototype's focus toward the Privacy Scrubber—making data protection visible, interactive, and immediate.
+                </p>
+            </div>
+            <div class="glass-card">
+                <h4 style="color: var(--primary); margin-bottom: 1rem;">Final Reflections</h4>
+                <p class="text-dim">
+                    This project wasn't just about building a website; it was about defining a new standard for student-AI interaction. We've learned that in the age of generative intelligence, the most valuable asset isn't the AI output—it's the integrity of the original human thought.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="text-dim" style="font-size: 0.8rem; letter-spacing: 2px;">© 2026 SPARK MIND | DIGITAL INTEGRITY FRAMEWORK</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

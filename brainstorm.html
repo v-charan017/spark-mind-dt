@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spark Mind | Brainstorming</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@400,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <div id="lightbox">
+        <div id="lightbox-close"><i class="fas fa-times"></i></div>
+        <img id="lightbox-img" src="" alt="Expanded View">
+    </div>
+
+    <header id="header">
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="Spark Mind Logo" style="height: 40px; width: auto; border-radius: 8px; margin-right: 12px;">
+            <span>SPARK</span> MIND
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="persona.html">Persona</a>
+            <a href="brainstorm.html" class="active">Brainstorming</a>
+            <a href="prototype.html">Prototype</a>
+            <a href="team.html">Team</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </header>
+
+    <section>
+        <span class="section-tag">Phase 02 / Ideation</span>
+        <h2 class="section-title">6-3-5 Methodology</h2>
+        
+        <div class="glass-card" style="margin-bottom: 4rem;">
+            <p style="margin-bottom: 3rem; font-size: 1.1rem; text-align: center; max-width: 800px; margin-inline: auto;">
+                Our brainstorming involved 6 participants generating 3 ideas every 5 minutes. 
+                This intensive process led to the discovery of the "Interception Proxy" concept 
+                as a primary solution for AI ethics.
+            </p>
+            
+            <div style="display: flex; flex-direction: column; gap: 4rem; align-items: center; max-width: 900px; margin: 0 auto;">
+                <!-- RCA -->
+                <div class="viz-box" style="width: 100%;">
+                    <span class="section-tag" style="font-size: 0.6rem;">01. Root Cause Analysis</span>
+                    <img src="Root_Cause_Analysis_Diagram.png" alt="RCA" class="img-clickable">
+                    <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 1rem; text-align: center;">
+                        <strong>Analysis:</strong> Identifies the core "Trust Gap" and the risk of unverified data transmission as the primary ethical failures in current student-AI interactions.
+                    </p>
+                </div>
+
+                <!-- Journey Map -->
+                <div class="viz-box" style="width: 100%;">
+                    <span class="section-tag" style="font-size: 0.6rem;">02. User Journey Map</span>
+                    <img src="JournyMap.jpeg" alt="Journey" class="img-clickable">
+                    <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 1rem; text-align: center;">
+                        <strong>Mapping:</strong> Visualizes the student's transition from initial confusion and dependency toward a state of "Verified Agency" using Spark Mind.
+                    </p>
+                </div>
+
+                <!-- Flow Chart -->
+                <div class="viz-box" style="width: 100%;">
+                    <span class="section-tag" style="font-size: 0.6rem;">03. Logic Flowchart</span>
+                    <img src="FlowChart.jpeg" alt="Flow" class="img-clickable">
+                    <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 1rem; text-align: center;">
+                        <strong>Protocol:</strong> Outlines the internal logic of the Interception Layer—from PII scrubbing to the final vector-check verification.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="margin-bottom: 2rem;">Key Ideation Insights</h3>
+        <div class="grid-3">
+            <div class="glass-card">
+                <h5 style="color: var(--primary);">Real-time Vector Matching</h5>
+                <p class="text-dim" style="font-size: 0.85rem;">Checking if student work is too similar to AI datasets before transmission.</p>
+            </div>
+            <div class="glass-card">
+                <h5 style="color: var(--primary);">Educational Guardrails</h5>
+                <p class="text-dim" style="font-size: 0.85rem;">Alerts that suggest *how* to use AI ethically rather than doing the work for you.</p>
+            </div>
+            <div class="glass-card">
+                <h5 style="color: var(--primary);">Zero-Knowledge Interaction</h5>
+                <p class="text-dim" style="font-size: 0.85rem;">Ensuring the AI receives only the necessary technical context, never the identity.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="text-dim" style="font-size: 0.8rem; letter-spacing: 2px;">© 2026 SPARK MIND | DIGITAL INTEGRITY FRAMEWORK</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

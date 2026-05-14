@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spark Mind | Research Personas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@400,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <div id="lightbox">
+        <div id="lightbox-close"><i class="fas fa-times"></i></div>
+        <img id="lightbox-img" src="" alt="Expanded View">
+    </div>
+
+    <header id="header">
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="Spark Mind Logo" style="height: 40px; width: auto; border-radius: 8px; margin-right: 12px;">
+            <span>SPARK</span> MIND
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="persona.html" class="active">Persona</a>
+            <a href="brainstorm.html">Brainstorming</a>
+            <a href="prototype.html">Prototype</a>
+            <a href="team.html">Team</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </header>
+
+    <section>
+        <span class="section-tag">Phase 01 / Empathize</span>
+        <h2 class="section-title">Understanding the User</h2>
+        
+        <div class="glass-card" style="margin-bottom: 4rem;">
+            <h3 style="margin-bottom: 1.5rem; color: var(--primary);">What are Design Personas?</h3>
+            <p style="font-size: 1.1rem; color: #e2e8f0; line-height: 1.8;">
+                In the Design Thinking process, personas are **fictional yet data-driven archetypes** that represent the different user types within a targeted demographic. 
+                They aren't just descriptions of people; they are tools that help us humanize data. 
+                <br><br>
+                For **Spark Mind**, these personas represent the diverse spectrum of concerns regarding AI ethics—from technical security and academic honesty to long-term career preparation. By designing for these three individuals, we ensure our solution is robust, ethical, and practical.
+            </p>
+        </div>
+
+        <div class="personas-grid">
+            <div class="persona-card">
+                <img src="persona1.jpeg" alt="Ariun" class="persona-img img-clickable">
+                <h3 style="margin-bottom: 1rem; color: var(--primary);">Analytical Ariun</h3>
+                <p style="color: var(--text-dim); font-size: 0.95rem; line-height: 1.6;">
+                    <strong>The Security Auditor.</strong> 
+                    Ariun represents the technical side of the AI crisis. He is deeply concerned about where data is stored and how much of his intellectual property is being "harvested" by LLM providers.
+                    <br><br>
+                    <em>Goal:</em> Complete transparency and data sovereignty.
+                </p>
+            </div>
+            <div class="persona-card">
+                <img src="persona2.jpeg" alt="Basha" class="persona-img img-clickable">
+                <h3 style="margin-bottom: 1rem; color: var(--secondary);">Balanced Basha</h3>
+                <p style="color: var(--text-dim); font-size: 0.95rem; line-height: 1.6;">
+                    <strong>The Ethical Learner.</strong> 
+                    Basha represents the primary student user base. He wants to use AI to improve his efficiency but is terrified of accidentally crossing ethical lines or losing his own creative voice.
+                    <br><br>
+                    <em>Goal:</em> Efficient, ethical AI-assisted learning without over-dependence.
+                </p>
+            </div>
+            <div class="persona-card">
+                <img src="persona3.jpeg" alt="Fatima" class="persona-img img-clickable">
+                <h3 style="margin-bottom: 1rem; color: var(--accent);">Future Fatima</h3>
+                <p style="color: var(--text-dim); font-size: 0.95rem; line-height: 1.6;">
+                    <strong>The Career Strategist.</strong> 
+                    Fatima represents the forward-looking stakeholder. She sees AI as an inevitable part of her future career and wants to master the "human-AI partnership" while maintaining her professional integrity.
+                    <br><br>
+                    <em>Goal:</em> Mastering AI tools responsibly for future workforce readiness.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="text-dim" style="font-size: 0.8rem; letter-spacing: 2px;">© 2026 SPARK MIND | DIGITAL INTEGRITY FRAMEWORK</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

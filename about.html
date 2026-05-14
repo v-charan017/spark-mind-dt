@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardian AI | About & Research</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@400,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .anatomy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .parameter-chip {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            padding: 1rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+        .parameter-chip:hover {
+            border-color: var(--primary);
+            background: rgba(var(--primary-rgb), 0.05);
+            transform: scale(1.02);
+        }
+        .impact-card {
+            background: linear-gradient(135deg, rgba(255, 0, 122, 0.1), rgba(112, 0, 255, 0.1));
+            border: 1px solid rgba(255, 0, 122, 0.2);
+            padding: 3rem;
+            border-radius: 30px;
+            margin-top: 4rem;
+        }
+        .user-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .archetype {
+            padding: 2rem;
+            border-radius: 20px;
+        }
+        .good-user { background: rgba(39, 201, 63, 0.05); border: 1px solid rgba(39, 201, 63, 0.2); }
+        .bad-user { background: rgba(255, 95, 86, 0.05); border: 1px solid rgba(255, 95, 86, 0.2); }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <header id="header">
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="Spark Mind Logo" style="height: 40px; width: auto; border-radius: 8px; margin-right: 12px;">
+            <span>SPARK</span> MIND
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="persona.html">Persona</a>
+            <a href="brainstorm.html">Brainstorming</a>
+            <a href="prototype.html">Prototype</a>
+            <a href="team.html">Team</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </header>
+
+    <!-- Section 1: The AI Paradox -->
+    <section>
+        <span class="section-tag">01 / The Concept</span>
+        <h2 class="section-title">The Paradox of Intelligence</h2>
+        <div class="glass-card">
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #e2e8f0;">
+                Artificial Intelligence is everywhere—automating the mundane and answering the impossible. But here’s the catch: <span style="color: var(--primary); font-weight: 700;">Can we trust it?</span> 
+                AI doesn't just "know" things; it predicts them. Sometimes, it produces biased or flat-out incorrect answers with absolute confidence. Our research explores the bridge between this "confident error" and true human-verified reliability.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 2: Model Anatomy -->
+    <section style="padding-top: 0;">
+        <span class="section-tag">02 / Ethical Parameters</span>
+        <h2 class="section-title">Decoding the "Model Mind"</h2>
+        <p class="text-dim">To use AI ethically, we must understand the parameters that govern its behavior. It's not just a chat box; it's a complex taxonomy of logic.</p>
+        
+        <div class="anatomy-grid">
+            <div class="parameter-chip"><strong>Hallucination Resistance:</strong> The ability to say "I don't know" instead of faking a fact.</div>
+            <div class="parameter-chip"><strong>Context Awareness:</strong> Knowing where the information originated.</div>
+            <div class="parameter-chip"><strong>Recursive Updation:</strong> Staying relevant with yesterday’s and today’s world.</div>
+            <div class="parameter-chip"><strong>Taxonomy of Logic:</strong> Does it actually solve the problem or just jump to the result?</div>
+            <div class="parameter-chip"><strong>Persona Alignment:</strong> Matching the user's tone (Casual vs. Professional).</div>
+            <div class="parameter-chip"><strong>Conciseness:</strong> Solving problems without the "yapping" or filler.</div>
+            <div class="parameter-chip"><strong>Emotional Safety:</strong> Handling human interactions with consideration.</div>
+            <div class="parameter-chip"><strong>Robustness:</strong> How well an answer holds up under scrutiny.</div>
+        </div>
+    </section>
+
+    <!-- Section 3: Student Research -->
+    <section style="padding-top: 0;">
+        <span class="section-tag">03 / Human Feedback</span>
+        <h2 class="section-title">Voices from the Field</h2>
+        <div class="glass-card" style="margin-bottom: 3rem;">
+            <p>We interviewed students to see how AI is actually being used. It’s no longer a search engine; it’s a **Debugging Partner**, a **Personal Tutor**, and a **Productivity Engine**.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="glass-card">
+                <h4 style="color: var(--primary); margin-bottom: 1rem;">The Benefits</h4>
+                <p class="text-dim" style="font-size: 0.9rem;">Removes learning bottlenecks. Allows students to focus on *understanding* rather than just *searching*. It makes education self-paced.</p>
+            </div>
+            <div class="glass-card">
+                <h4 style="color: var(--accent); margin-bottom: 1rem;">The "Illusion of Competence"</h4>
+                <p class="text-dim" style="font-size: 0.9rem;">A major concern where students feel they understand a concept because the AI solved it, but find they cannot solve it independently.</p>
+            </div>
+            <div class="glass-card">
+                <h4 style="color: var(--secondary); margin-bottom: 1rem;">The Dependency Trap</h4>
+                <p class="text-dim" style="font-size: 0.9rem;">Blind use leads to a decrease in writing ability and a loss of creative, independent thinking.</p>
+            </div>
+        </div>
+
+        <div class="user-split">
+            <div class="archetype good-user">
+                <h4 style="color: #27c93f; margin-bottom: 1rem;"><i class="fas fa-brain"></i> The Strategic User</h4>
+                <ul style="font-size: 0.9rem; color: #bbf7d0; list-style: none;">
+                    <li>• Cross-checks every AI claim with books/notes.</li>
+                    <li>• Attempts solving first, uses AI as a backup.</li>
+                    <li>• Breaks complex answers into logical steps.</li>
+                </ul>
+            </div>
+            <div class="archetype bad-user">
+                <h4 style="color: #ff5f56; margin-bottom: 1rem;"><i class="fas fa-copy"></i> The Weak User</h4>
+                <ul style="font-size: 0.9rem; color: #fecaca; list-style: none;">
+                    <li>• Relies on the "Confidence" of the AI blindly.</li>
+                    <li>• Copy-pastes without reading or understanding.</li>
+                    <li>• Skips the actual struggle of learning.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Data Centers & Environment -->
+    <section style="padding-top: 0;">
+        <span class="section-tag">04 / The Hidden Cost</span>
+        <h2 class="section-title">The Power Behind the Prompt</h2>
+        <div class="impact-card">
+            <h3 style="margin-bottom: 1.5rem; color: #fff;">Data Centers: The Invisible Powerhouse</h3>
+            <div class="grid-3" style="gap: 4rem;">
+                <div>
+                    <p style="color: #fff; font-weight: 600;">The Maintenance Myth</p>
+                    <p style="font-size: 0.9rem; color: #e2e8f0; margin-top: 0.5rem;">To exist, AI needs 24/7 cooling and massive energy. Hallucinations might just be a symptom of our current technological limitations in data set creation.</p>
+                </div>
+                <div>
+                    <p style="color: #fff; font-weight: 600;">The Heat of a Prompt</p>
+                    <p style="font-size: 0.9rem; color: #e2e8f0; margin-top: 0.5rem;">Every single prompt contributes to insane heat release. No matter how small the query, it adds to global warming through high-maintenance energy consumption.</p>
+                </div>
+                <div>
+                    <p style="color: #fff; font-weight: 600;">The Ethical Question</p>
+                    <p style="font-size: 0.9rem; color: #e2e8f0; margin-top: 0.5rem;">How can we cleverly use AI so that we do not cause significant damage to the environment? Responsible use is no longer optional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="text-dim" style="font-size: 0.8rem; letter-spacing: 2px;">© 2026 SPARK MIND | DIGITAL INTEGRITY FRAMEWORK</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
