@@ -124,3 +124,133 @@ if (lightbox && lbImg) {
         if (e.target === lightbox) closeLightbox();
     });
 }
+
+// 5. Custom Audio Players
+const audioPlayers = document.querySelectorAll('.audio-player-container');
+if (audioPlayers.length > 0) {
+    audioPlayers.forEach(player => {
+        const audio = player.querySelector('.native-audio');
+        const playBtn = player.querySelector('.play-pause-btn');
+        const playIcon = playBtn.querySelector('i');
+        const progressSlider = player.querySelector('.progress-slider');
+        const currentTimeLabel = player.querySelector('.current-time');
+        const durationLabel = player.querySelector('.duration');
+        const volumeBtn = player.querySelector('.volume-btn');
+        const volumeIcon = volumeBtn.querySelector('i');
+        const volumeSlider = player.querySelector('.volume-slider');
+
+        let lastVolume = 0.8;
+
+        // Helper to format time (seconds -> M:SS)
+        function formatTime(secs) {
+            if (isNaN(secs)) return '0:00';
+            const minutes = Math.floor(secs / 60);
+            const seconds = Math.floor(secs % 60);
+            const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+            return `${minutes}:${returnedSeconds}`;
+        }
+
+        // Set duration text when metadata loads
+        function setDuration() {
+            durationLabel.textContent = formatTime(audio.duration);
+        }
+
+        if (audio.readyState >= 1) {
+            setDuration();
+        } else {
+            audio.addEventListener('loadedmetadata', setDuration);
+        }
+
+        // Play / Pause Toggle
+        playBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                // Pause all other audio players first (exclusive playback)
+                document.querySelectorAll('.native-audio').forEach(otherAudio => {
+                    if (otherAudio !== audio) {
+                        otherAudio.pause();
+                        const otherPlayer = otherAudio.closest('.audio-player-container');
+                        if (otherPlayer) {
+                            const otherIcon = otherPlayer.querySelector('.play-pause-btn i');
+                            if (otherIcon) {
+                                otherIcon.className = 'fas fa-play';
+                            }
+                        }
+                    }
+                });
+
+                audio.play();
+                playIcon.className = 'fas fa-pause';
+            } else {
+                audio.pause();
+                playIcon.className = 'fas fa-play';
+            }
+        });
+
+        // Time Update (Sync progress bar and timer)
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                const percentage = (audio.currentTime / audio.duration) * 100;
+                progressSlider.value = percentage;
+                currentTimeLabel.textContent = formatTime(audio.currentTime);
+            }
+        });
+
+        // Dragging/Scrubbing progress slider
+        progressSlider.addEventListener('input', () => {
+            if (audio.duration) {
+                const newTime = (progressSlider.value / 100) * audio.duration;
+                audio.currentTime = newTime;
+                currentTimeLabel.textContent = formatTime(newTime);
+            }
+        });
+
+        // Volume control slider
+        volumeSlider.addEventListener('input', () => {
+            audio.volume = volumeSlider.value;
+            audio.muted = false;
+            updateVolumeIcon(volumeSlider.value);
+        });
+
+        // Mute / Unmute toggle button
+        volumeBtn.addEventListener('click', () => {
+            if (audio.muted) {
+                audio.muted = false;
+                audio.volume = lastVolume;
+                volumeSlider.value = lastVolume;
+                updateVolumeIcon(lastVolume);
+            } else {
+                lastVolume = audio.volume > 0 ? audio.volume : 0.8;
+                audio.muted = true;
+                audio.volume = 0;
+                volumeSlider.value = 0;
+                volumeIcon.className = 'fas fa-volume-mute';
+            }
+        });
+
+        function updateVolumeIcon(vol) {
+            if (vol == 0) {
+                volumeIcon.className = 'fas fa-volume-mute';
+            } else if (vol < 0.5) {
+                volumeIcon.className = 'fas fa-volume-down';
+            } else {
+                volumeIcon.className = 'fas fa-volume-up';
+            }
+        }
+
+        // Reset player state when audio ends
+        audio.addEventListener('ended', () => {
+            playIcon.className = 'fas fa-play';
+            progressSlider.value = 0;
+            currentTimeLabel.textContent = '0:00';
+        });
+    });
+
+    // Custom cursor hover listeners specifically for these players
+    const mainCursor = document.getElementById('cursor');
+    if (mainCursor) {
+        document.querySelectorAll('.play-pause-btn, .volume-btn, .audio-slider').forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+    }
+}
